@@ -2,14 +2,18 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const PostList: React.FC = () => {
+interface PostListProps {
+  userId: number;
+}
+
+const PostList: React.FC<PostListProps> = ({ userId }) => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/posts')
+    axios.get(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
       .then(response => setPosts(response.data))
       .catch(error => console.error('Error fetching posts:', error));
-  }, []);
+  }, [userId]);
 
   return (
     <div>
