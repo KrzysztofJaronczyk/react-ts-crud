@@ -1,13 +1,14 @@
 // src/components/PostList.tsx
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom' // Add this import
+
 import axios from 'axios';
 
-interface PostListProps {
-  userId: number;
-}
+const PostList: React.FC  = () => {
+	const { id } = useParams() // Get the id parameter from the URL
+	const userId = parseInt(id ?? '', 10) // Convert id to a number
 
-const PostList: React.FC<PostListProps> = ({ userId }) => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<any[]>([]);
 
   useEffect(() => {
     axios.get(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
