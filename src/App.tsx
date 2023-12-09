@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import UserTable from './components/UserTable';
 import UserDetails from './components/UserDetails';
+import AllPostsList from './components/AllPostsList';
 import PostList from './components/PostList'; // Import the PostList component
 
 const App: React.FC = () => {
@@ -13,8 +14,9 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<UserTable />} />
           <Route path="/user/:id" element={<UserDetails />} />
-          {/* Add a new route for displaying posts */}
           <Route path="/user/:id/posts" element={<PostList  />} />
+          <Route path="/posts" element={<AllPostsList />} />
+          <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
       </div>
     </Router>
