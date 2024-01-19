@@ -15,6 +15,7 @@ import "preline/preline";
 import { IStaticMethods } from "preline/preline";
 import Navbar from "./components/Navbar";
 import NotFound from "./components/404";
+import Register from "./components/Register";
 declare global {
 	interface Window {
 		HSStaticMethods: IStaticMethods;
@@ -27,6 +28,7 @@ const App: React.FC = () => {
 		<Router>
 			<div>
 				<Navbar />
+				{/*<Register />*/}
 				<Routes>
 					<Route path='/' element={<UserTable />} />
 					<Route path='/user/:id' element={<UserDetails />} />
