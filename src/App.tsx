@@ -14,6 +14,7 @@ import { useLocation } from 'react-router-dom';
 import "preline/preline";
 import { IStaticMethods } from "preline/preline";
 import Navbar from "./components/Navbar";
+import NotFound from "./components/404";
 declare global {
 	interface Window {
 		HSStaticMethods: IStaticMethods;
@@ -34,7 +35,7 @@ const App: React.FC = () => {
 					<Route path='/posts/:postId/comments' element={<CommentList />} />
 					<Route path='/test' element={<Testing />}/>
 
-					<Route path='*' element={<div>404 Not Found</div>} />
+					<Route path='*' element={<NotFound />} />
 				</Routes>
 			</div>
 		</Router>
