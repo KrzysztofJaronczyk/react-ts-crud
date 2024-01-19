@@ -13,6 +13,7 @@ import { useLocation } from 'react-router-dom';
 
 import "preline/preline";
 import { IStaticMethods } from "preline/preline";
+import Navbar from "./components/Navbar";
 declare global {
 	interface Window {
 		HSStaticMethods: IStaticMethods;
@@ -24,7 +25,7 @@ const App: React.FC = () => {
 	return (
 		<Router>
 			<div>
-				<h1>React TypeScript CRUD App</h1>
+				<Navbar />
 				<Routes>
 					<Route path='/' element={<UserTable />} />
 					<Route path='/user/:id' element={<UserDetails />} />
