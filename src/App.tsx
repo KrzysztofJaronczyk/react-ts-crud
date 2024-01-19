@@ -5,6 +5,7 @@ import UserTable from './components/UserTable'
 import UserDetails from './components/UserDetails'
 import AllPostsList from './components/AllPostsList'
 import CommentList from './components/CommentList'
+import Testing from './components/Testing'
 
 import PostList from './components/PostList'
 
@@ -19,6 +20,7 @@ const App: React.FC = () => {
 					<Route path='/user/:id/posts' element={<PostList />} />
 					<Route path='/posts' element={<AllPostsList />} />
 					<Route path='/posts/:postId/comments' element={<CommentList />} />
+					<Route path='/test' element={<Testing />}/>
 
 					<Route path='*' element={<div>404 Not Found</div>} />
 				</Routes>
