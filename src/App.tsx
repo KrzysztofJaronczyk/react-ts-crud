@@ -8,8 +8,19 @@ import CommentList from './components/CommentList'
 import Testing from './components/Testing'
 
 import PostList from './components/PostList'
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+import "preline/preline";
+import { IStaticMethods } from "preline/preline";
+declare global {
+	interface Window {
+		HSStaticMethods: IStaticMethods;
+	}
+}
 
 const App: React.FC = () => {
+
 	return (
 		<Router>
 			<div>
